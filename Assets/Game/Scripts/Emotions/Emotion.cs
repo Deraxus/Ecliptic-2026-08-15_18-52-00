@@ -1,17 +1,21 @@
 using System;
 using UnityEngine;
 
-public enum Emotions
+namespace Ecliptic.Characters
 {
-    Idle,
-    Happy,
-    Angry,
-    Sad
-}
+    public enum Emotions
+    {
+        Idle,
+        Happy,
+        Angry,
+        Sad
+    }
 
-[Serializable]
-public class Emotion
-{
-    public Emotions emotion;
-    public SpriteRenderer sprite;
+    [Serializable]
+    public class Emotion
+    {
+        public Emotions emotion;
+        public SpriteRenderer sprite;
+    }
+   
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Ecliptic.Characters;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Character", menuName = "Scriptable Objects/Character")]
