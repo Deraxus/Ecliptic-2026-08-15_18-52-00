@@ -15,7 +15,7 @@ namespace Ecliptic.Characters
     public class Emotion
     {
         public Emotions emotion;
-        public SpriteRenderer sprite;
+        public Sprite sprite;
     }
    
 }

@@ -20,6 +20,9 @@ namespace Ecliptic.Story
         public string dialogueText;
     
         public Character character;
+        public Sides characterSide;
+        
+        public ClothesTypes clothesType;
         public Emotions emotion;
 
     }   
