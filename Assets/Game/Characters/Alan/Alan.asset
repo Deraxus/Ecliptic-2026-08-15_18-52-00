@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9caa7d74314be645b38141152f924bc, type: 3}
   m_Name: Alan
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  characterName: 
-  clothes: []
+  characterName: "\u0410\u043B\u0430\u043D"
+  clothes:
+  - name: 0
+    emotions:
+    - emotion: 0
+      sprite: {fileID: 8986698288825345997, guid: 5cf2323732e5cdf4087a1af20cd4aea3, type: 3}
