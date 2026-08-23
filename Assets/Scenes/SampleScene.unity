@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 97044158}
   - component: {fileID: 97044157}
   - component: {fileID: 97044156}
+  - component: {fileID: 97044160}
   m_Layer: 0
   m_Name: StoryController
   m_TagString: Untagged
@@ -318,54 +319,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dda9ae4dabc3449a9efe3a99e2ea93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ecliptic.Story.StoryManager
+  autoStoryFramesID: 1
   storyFrames:
   - id: 0
     frameType: 0
     dialogueText: "\u0417\u0434\u0430\u0440\u043E\u0432\u0430!"
+    changeBackground: 0
+    frameBackground: {fileID: 0}
     character: {fileID: 0}
     characterSide: 0
     clothesType: 0
     emotion: 0
+    hideCharacters: 0
   - id: 1
     frameType: 1
     dialogueText: "\u042F \u0410\u043B\u0430\u043D!"
+    changeBackground: 0
+    frameBackground: {fileID: 0}
     character: {fileID: 11400000, guid: a2d7e4e7db2b78148a2c5d3fff08ae28, type: 2}
-    characterSide: 0
+    characterSide: 1
     clothesType: 0
     emotion: 0
-  - id: 2
+    hideCharacters: 0
+  - id: 0
     frameType: 1
     dialogueText: "\u0410 \u044F - \u0421\u0438\u043B\u044C\u0432\u0438\u044F!"
+    changeBackground: 0
+    frameBackground: {fileID: 0}
     character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
-    characterSide: 2
+    characterSide: 3
     clothesType: 0
     emotion: 0
+    hideCharacters: 0
   - id: 3
     frameType: 1
     dialogueText: "\u042F \u0410\u043B\u0430\u043D \u0438 \u044F \u0434\u043E\u043B\u0431\u0430\u0435\u0431
       \u044B\u0430\u044B\u0430\u044B\u044B\u044B\u044B\u0430\u044B "
+    changeBackground: 0
+    frameBackground: {fileID: 0}
     character: {fileID: 11400000, guid: a2d7e4e7db2b78148a2c5d3fff08ae28, type: 2}
-    characterSide: 0
+    characterSide: 1
     clothesType: 0
     emotion: 0
+    hideCharacters: 0
   - id: 4
     frameType: 1
     dialogueText: "\u0410 \u044F \u0421\u0438\u043B\u044C\u0432\u0438\u044F \u0438
       \u044F \u0442\u043E\u0436\u0435 \u0434\u043E\u043B\u0431\u0430\u0435\u0431\u043A\u0430!
       \u044B\u044B\u0430\u044B\u0430\u044B\u0430\u044B\u0430\u044B\u0430\u044B\u0430"
+    changeBackground: 0
+    frameBackground: {fileID: 0}
     character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
-    characterSide: 2
+    characterSide: 3
     clothesType: 0
     emotion: 0
+    hideCharacters: 0
+  - id: 5
+    frameType: 0
+    dialogueText: "\u0432\u043E\u0442 \u0438 \u0432\u0441\u0435"
+    changeBackground: 0
+    frameBackground: {fileID: 0}
+    character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
+    characterSide: 3
+    clothesType: 0
+    emotion: 0
+    hideCharacters: 0
+  - id: 5
+    frameType: 0
+    dialogueText: "\u0427\u0442\u043E \u0436\u0435 \u043D\u0430\u0448\u0438 \u0433\u0435\u0440\u043E\u0438
+      \u0431\u0443\u0434\u0443\u0442 \u0434\u0435\u043B\u0430\u0442\u044C \u0434\u0430\u043B\u044C\u0448\u0435?"
+    changeBackground: 0
+    frameBackground: {fileID: 0}
+    character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
+    characterSide: 3
+    clothesType: 0
+    emotion: 0
+    hideCharacters: 1
   currentFrameIndex: 0
   currentStoryFrame:
     id: 0
     frameType: 0
     dialogueText: 
+    changeBackground: 0
+    frameBackground: {fileID: 0}
     character: {fileID: 0}
     characterSide: 0
     clothesType: 0
     emotion: 0
+    hideCharacters: 0
 --- !u!4 &97044159
 Transform:
   m_ObjectHideFlags: 0
@@ -381,6 +422,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &97044160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97044155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e377563a9ac144e862baa86076d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ecliptic.Backgrounds.BackgroundManager
+  mainBackgroundImage: {fileID: 767498212}
+  startBackground: {fileID: 11400000, guid: 66f6f1b02d374684e8751dda304ef1c6, type: 2}
 --- !u!1 &479220269
 GameObject:
   m_ObjectHideFlags: 0

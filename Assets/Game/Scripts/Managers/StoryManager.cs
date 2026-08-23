@@ -1,3 +1,4 @@
+using Ecliptic.Backgrounds;
 using Ecliptic.Characters;
 using Ecliptic.Dialogue;
 using TMPro;
@@ -11,12 +12,13 @@ namespace Ecliptic.Story
         public static StoryManager Instance;
     
         [Header("Основные настройки сцены")]
-    
+        public bool autoStoryFramesID = true;
         public StoryFrame[] storyFrames;
 
         public int currentFrameIndex = 0;
     
         public StoryFrame currentStoryFrame;
+        
 
         void Awake()
         {
@@ -34,6 +36,16 @@ namespace Ecliptic.Story
             {
                 Debug.LogError("Фреймы не найдены!");
                 return;
+            }
+
+            if (autoStoryFramesID)
+            {
+                int localID = 0;
+                foreach (StoryFrame frame in storyFrames)
+                {
+                    frame.id = localID;
+                    localID++;
+                }
             }
             
             NextFrame();
@@ -71,13 +83,23 @@ namespace Ecliptic.Story
             {
                 DisplayDifferenceFrame(frame);
             }
+
+            if (frame.hideCharacters)
+            {
+                CharacterManager.Instance.HideCharacters();
+            }
+
+            if (frame.changeBackground)
+            {
+                BackgroundManager.Instance.ChangeBackground(frame.frameBackground);
+            }
         }
 
         private void DisplayFirstFrame(StoryFrame frame)
         {
             switch (frame.frameType)
             {
-                case FrameType.MiddleTextOnly:
+                case FrameType.MiddleText:
                     DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
                     break;
             }
@@ -87,7 +109,7 @@ namespace Ecliptic.Story
         {
             switch (frame.frameType)
             {
-                case FrameType.MiddleTextOnly:
+                case FrameType.MiddleText:
                     DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
                     break;
                 
@@ -102,9 +124,9 @@ namespace Ecliptic.Story
         {
             // Было - персонажи
             // Стало - одиночный текст по центру
-            if (currentStoryFrame.frameType == FrameType.CharacterText && frame.frameType == FrameType.MiddleTextOnly)
+            if (currentStoryFrame.frameType == FrameType.CharacterText && frame.frameType == FrameType.MiddleText)
             {
-                CharacterManager.Instance.HideCharacters();
+                print("Захожу в кейс уборки персонажей");
                 DialogueManager.Instance.ShowMainDialogue();
                 
                 DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
@@ -112,10 +134,10 @@ namespace Ecliptic.Story
             
             // Было - обычный текст по центру
             // Стало - персонажи
-            else if (currentStoryFrame.frameType == FrameType.MiddleTextOnly &&
+            else if (currentStoryFrame.frameType == FrameType.MiddleText &&
                      frame.frameType == FrameType.CharacterText)
             {
-                CharacterManager.Instance.ShowCharacters();
+                CharacterManager.Instance.ShowCharacters(frame.characterSide);
                 CharacterManager.Instance.DisplayCharacter(frame.character, frame.characterSide, frame.clothesType, frame.emotion);
                 DialogueManager.Instance.ShowMainDialogue();
                 DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);

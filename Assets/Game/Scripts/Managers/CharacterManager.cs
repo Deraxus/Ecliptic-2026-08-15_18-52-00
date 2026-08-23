@@ -5,9 +5,10 @@ namespace Ecliptic.Characters
 {
     public enum Sides
     {
+        AllSides,
         Left,
         Centre,
-        Right
+        Right,
     }
 
     public class CharacterManager : MonoBehaviour
@@ -28,7 +29,7 @@ namespace Ecliptic.Characters
             }
         }
 
-        public void HideCharacters(Sides side = default)
+        public void HideCharacters(Sides side = Sides.AllSides)
         {
             switch (side)
             {
@@ -41,6 +42,7 @@ namespace Ecliptic.Characters
                     rightCharacterImage.gameObject.SetActive(false);
                     break;
                 default:
+                    print("Убираю персонажей от CharacterManager");
                     leftCharacterImage.sprite = null;
                     rightCharacterImage.sprite = null;
                 
@@ -53,10 +55,21 @@ namespace Ecliptic.Characters
             
         }
 
-        public void ShowCharacters()
+        public void ShowCharacters(Sides side = Sides.AllSides)
         {
-            leftCharacterImage.gameObject.SetActive(true);
-            rightCharacterImage.gameObject.SetActive(true);
+            switch (side)
+            {
+                case Sides.Left:
+                    leftCharacterImage.gameObject.SetActive(true);
+                    break;
+                case Sides.Right:
+                    rightCharacterImage.gameObject.SetActive(true);
+                    break;
+                default:
+                    leftCharacterImage.gameObject.SetActive(true);
+                    rightCharacterImage.gameObject.SetActive(true);
+                    break;
+            }
         }
 
         public void DisplayCharacter(Character character,
@@ -74,18 +87,20 @@ namespace Ecliptic.Characters
                 newCharacterSprite = character.GetSprite(clothesType, emotion);
             }
             
-            ShowCharacters();
+            ShowCharacters(side);
             
             switch (side)
             {
                 case Sides.Left:
-                    HideCharacters(Sides.Right);
+                    HideCharacters(Sides.Right);                        
+
                     currentLeftCharacter = character;
                     leftCharacterImage.sprite = newCharacterSprite;
                     break;
                 
                 case Sides.Right:
-                    HideCharacters(Sides.Left);
+                    HideCharacters(Sides.Left);                        
+
                     currentRightCharacter = character;
                     rightCharacterImage.sprite = newCharacterSprite;
                     break;
