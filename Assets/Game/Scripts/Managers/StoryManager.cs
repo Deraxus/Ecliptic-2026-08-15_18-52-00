@@ -14,6 +14,9 @@ namespace Ecliptic.Story
         [Header("Основные настройки сцены")]
         public bool autoStoryFramesID = true;
         public StoryFrame[] storyFrames;
+        
+        [Tooltip("Список фреймов, которые мы получаем если заходим в выборную ветку")]
+        public StoryFrame[] optionStoryFrames;
 
         public int currentFrameIndex = 0;
     
@@ -75,13 +78,19 @@ namespace Ecliptic.Story
                 return;
             }
 
-            if (IsSameFrameType(frame))
+            switch (frame.frameType)
             {
-                DisplaySameFrameType(frame);
-            }
-            else
-            {
-                DisplayDifferenceFrame(frame);
+                case FrameType.MiddleText:
+                    DisplayTextOnlyFrame(frame);
+                    break;
+                
+                case FrameType.CharacterText:
+                    DisplayCharacterTextFrame(frame);
+                    break;
+                
+                case FrameType.ChooseOptions:
+                    DisplayOptionsFrame(frame);
+                    break;
             }
 
             if (frame.hideCharacters)
@@ -105,44 +114,29 @@ namespace Ecliptic.Story
             }
             
         }
-        private void DisplaySameFrameType(StoryFrame frame)
+
+        private void DisplayTextOnlyFrame(StoryFrame frame)
         {
-            switch (frame.frameType)
-            {
-                case FrameType.MiddleText:
-                    DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
-                    break;
-                
-                case FrameType.CharacterText:
-                    DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
-                    CharacterManager.Instance.DisplayCharacter(frame.character, frame.characterSide, frame.clothesType, frame.emotion);
-                    break;
-            }
+            DialogueManager.Instance.ShowMainDialogue();
+            DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
         }
 
-        private void DisplayDifferenceFrame(StoryFrame frame)
+        private void DisplayCharacterTextFrame(StoryFrame frame)
         {
-            // Было - персонажи
-            // Стало - одиночный текст по центру
-            if (currentStoryFrame.frameType == FrameType.CharacterText && frame.frameType == FrameType.MiddleText)
-            {
-                print("Захожу в кейс уборки персонажей");
-                DialogueManager.Instance.ShowMainDialogue();
-                
-                DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
-            }
-            
-            // Было - обычный текст по центру
-            // Стало - персонажи
-            else if (currentStoryFrame.frameType == FrameType.MiddleText &&
-                     frame.frameType == FrameType.CharacterText)
-            {
-                CharacterManager.Instance.ShowCharacters(frame.characterSide);
-                CharacterManager.Instance.DisplayCharacter(frame.character, frame.characterSide, frame.clothesType, frame.emotion);
-                DialogueManager.Instance.ShowMainDialogue();
-                DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
-            }
+            CharacterManager.Instance.ShowCharacters(frame.characterSide);
+            CharacterManager.Instance.DisplayCharacter(frame.character, frame.characterSide, frame.clothesType, frame.emotion);
+            DialogueManager.Instance.ShowMainDialogue();
+            DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
         }
+
+        private void DisplayOptionsFrame(StoryFrame frame)
+        {
+            DialogueManager.Instance.HideMainDialogue();
+            
+            ChoiceManager.Instance.ShowOptionsPanel();
+            ChoiceManager.Instance.RedrawOptionPanel(frame);
+        }
+        
 
         private bool IsSameFrameType(StoryFrame frame)
         {

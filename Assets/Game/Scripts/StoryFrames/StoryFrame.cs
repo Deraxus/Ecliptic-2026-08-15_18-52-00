@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Ecliptic.Backgrounds;
 using Ecliptic.Characters;
 using UnityEngine;
@@ -28,6 +29,9 @@ namespace Ecliptic.Story
         
         public ClothesTypes clothesType;
         public Emotions emotion;
+        
+        [Tooltip("Возможные выборы на этом фрейме. Для типа фрейма ChooseOptions")]
+        public List<StoryChoice> choices;
 
         [Header("Дополнительные настройки фрейма")]
         [Tooltip("Прячет всех персонажей с кадра")]
