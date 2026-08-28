@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63999ca815219b45af6020e47d04f65, type: 3}
   m_Name: Empatia
   m_EditorClassIdentifier: Assembly-CSharp::Ecliptic.Stats.Stat
-  statName: 
+  statName: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F"
