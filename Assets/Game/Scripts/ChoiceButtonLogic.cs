@@ -9,7 +9,7 @@ namespace Ecliptic.Story
         
         public void OnClick()
         {
-            LoadChoiceOption(storyChoice);
+            StoryManager.Instance.LoadChoiceOption(storyChoice);
         }
 
         public void RedrawButton(StoryChoice storyChoice)
@@ -19,10 +19,6 @@ namespace Ecliptic.Story
             GetComponentInChildren<TMP_Text>().text = storyChoice.choiceText;
         }
         
-        private void LoadChoiceOption(StoryChoice choice)
-        {
-            StoryManager.Instance.optionStoryFrames = choice.storyFrames;
-        }
     }
     
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Ecliptic.Backgrounds;
 using Ecliptic.Characters;
 using Ecliptic.Dialogue;
@@ -12,15 +13,15 @@ namespace Ecliptic.Story
         public static StoryManager Instance;
     
         [Header("Основные настройки сцены")]
+        public StoryFrame[] startStoryFrames;
         public bool autoStoryFramesID = true;
-        public StoryFrame[] storyFrames;
-        
-        [Tooltip("Список фреймов, которые мы получаем если заходим в выборную ветку")]
-        public StoryFrame[] optionStoryFrames;
 
         public int currentFrameIndex = 0;
     
         public StoryFrame currentStoryFrame;
+        
+        private Stack<StoryReturnPoint> storyReturnPoints;
+        private StoryFrame[] currentStoryFrames;
         
 
         void Awake()
@@ -35,7 +36,7 @@ namespace Ecliptic.Story
     
         void Initialize()
         {
-            if (storyFrames.Length == 0)
+            if (startStoryFrames.Length == 0)
             {
                 Debug.LogError("Фреймы не найдены!");
                 return;
@@ -44,30 +45,46 @@ namespace Ecliptic.Story
             if (autoStoryFramesID)
             {
                 int localID = 0;
-                foreach (StoryFrame frame in storyFrames)
+                foreach (StoryFrame frame in startStoryFrames)
                 {
                     frame.id = localID;
                     localID++;
                 }
             }
             
+            LoadStartCurrentFrames();
             NextFrame();
         }
 
         // Подключаем метод к кликам/тапам, и даем ему бегать по списку фреймов
         public void NextFrame()
         {
-            if (currentFrameIndex >= storyFrames.Length)
+            if (currentFrameIndex >= currentStoryFrames.Length)
             {
-                Debug.LogError("Закончились фреймы для отображения!");
-                return;
+                EndCurrentStoryFrameList();
             }
             
-            StoryFrame currentLocalStoryFrame =  storyFrames[currentFrameIndex];
+            StoryFrame currentLocalStoryFrame =  currentStoryFrames[currentFrameIndex];
             DisplayFrame(currentLocalStoryFrame);
             
             currentStoryFrame = currentLocalStoryFrame;
             currentFrameIndex++;
+        }
+        
+        // Кнопка вызывает этот метод при нажатии
+        public void LoadChoiceOption(StoryChoice choice)
+        {
+            StoryReturnPoint localReturnPoint = new StoryReturnPoint();
+            localReturnPoint.returnedIndex = currentFrameIndex;
+            localReturnPoint.storyFrames = currentStoryFrames;
+            
+            storyReturnPoints.Push(localReturnPoint);
+            
+            currentStoryFrames = choice.storyFrames;
+            currentFrameIndex = 0;
+            
+            ChoiceManager.Instance.HideOptionsPanel();
+            NextFrame();
         }
 
         private void DisplayFrame(StoryFrame frame)
@@ -147,6 +164,27 @@ namespace Ecliptic.Story
 
             return false;
         }
+
+        private void LoadStartCurrentFrames()
+        {
+            storyReturnPoints = new Stack<StoryReturnPoint>();
+            currentStoryFrames = startStoryFrames;
+        }
+
+        private void EndCurrentStoryFrameList()
+        {
+            if (storyReturnPoints.Count == 0)
+            {
+                Debug.Log("История закончилась");
+                return;
+            }
+            
+            StoryReturnPoint localReturnPoint = storyReturnPoints.Pop();
+            
+            currentStoryFrames = localReturnPoint.storyFrames;
+            currentFrameIndex = localReturnPoint.returnedIndex;
+        }
+        
     }
    
 }
