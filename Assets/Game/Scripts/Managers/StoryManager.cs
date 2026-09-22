@@ -5,6 +5,7 @@ using Ecliptic.Dialogue;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Ecliptic.Stats;
 
 namespace Ecliptic.Story
 {
@@ -61,7 +62,10 @@ namespace Ecliptic.Story
         {
             if (currentFrameIndex >= currentStoryFrames.Length)
             {
-                EndCurrentStoryFrameList();
+                if (!EndCurrentStoryFrameList())
+                {
+                    return;
+                }
             }
             
             StoryFrame currentLocalStoryFrame =  currentStoryFrames[currentFrameIndex];
@@ -84,6 +88,12 @@ namespace Ecliptic.Story
             currentFrameIndex = 0;
             
             ChoiceManager.Instance.HideOptionsPanel();
+            
+            foreach (var statChanging in choice.statChanging)
+            {
+                StatManager.Instance.AddStat(statChanging.stat, statChanging.amount);
+                print($"Прибавили {statChanging.stat.statName} на {statChanging.amount}");
+            }
             NextFrame();
         }
 
@@ -171,18 +181,20 @@ namespace Ecliptic.Story
             currentStoryFrames = startStoryFrames;
         }
 
-        private void EndCurrentStoryFrameList()
+        private bool EndCurrentStoryFrameList()
         {
             if (storyReturnPoints.Count == 0)
             {
                 Debug.Log("История закончилась");
-                return;
+                return false;
             }
             
             StoryReturnPoint localReturnPoint = storyReturnPoints.Pop();
             
             currentStoryFrames = localReturnPoint.storyFrames;
             currentFrameIndex = localReturnPoint.returnedIndex;
+
+            return true;
         }
         
     }

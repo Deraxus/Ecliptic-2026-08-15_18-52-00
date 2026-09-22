@@ -1,4 +1,5 @@
 using System;
+using Ecliptic.Stats;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,6 +55,7 @@ namespace Ecliptic.Story
                 }
             }
         }
+        
     }    
 }
 

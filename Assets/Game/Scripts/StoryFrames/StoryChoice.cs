@@ -13,6 +13,7 @@ namespace Ecliptic.Story
         public string choiceText;
         
         [FormerlySerializedAs("statChangings")] public List<StatChanging> statChanging = new List<StatChanging>();
+        public List<StatRequired> statRequired = new List<StatRequired>();
         public StoryFrame[] storyFrames;
     }
     
