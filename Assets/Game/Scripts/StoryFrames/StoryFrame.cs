@@ -8,9 +8,10 @@ namespace Ecliptic.Story
 {
     public enum FrameType
     {
-        MiddleText,
-        CharacterText,
-        ChooseOptions
+        MiddleText = 0,
+        CharacterText = 1,
+        ChooseOptions = 2,
+        Cutscene = 3
     }
 
     [Serializable]

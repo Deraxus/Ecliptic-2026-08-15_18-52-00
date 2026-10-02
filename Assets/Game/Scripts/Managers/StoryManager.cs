@@ -136,7 +136,7 @@ namespace Ecliptic.Story
             switch (frame.frameType)
             {
                 case FrameType.MiddleText:
-                    DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
+                    DialogueManager.Instance.ChangeMiddleMainText(frame.dialogueText);
                     break;
             }
             
@@ -144,21 +144,26 @@ namespace Ecliptic.Story
 
         private void DisplayTextOnlyFrame(StoryFrame frame)
         {
+            DialogueManager.Instance.HideCharacterDialogue();
+            
             DialogueManager.Instance.ShowMainDialogue();
-            DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
+            DialogueManager.Instance.ChangeMiddleMainText(frame.dialogueText);
         }
 
         private void DisplayCharacterTextFrame(StoryFrame frame)
         {
+            DialogueManager.Instance.HideMainDialogue();
+            
             CharacterManager.Instance.ShowCharacters(frame.characterSide);
             CharacterManager.Instance.DisplayCharacter(frame.character, frame.characterSide, frame.clothesType, frame.emotion);
-            DialogueManager.Instance.ShowMainDialogue();
-            DialogueManager.Instance.ChangeMiddleText(frame.dialogueText);
+            DialogueManager.Instance.ShowCharacterDialogue();
+            DialogueManager.Instance.ChangeCharacterText(frame.dialogueText);
         }
 
         private void DisplayOptionsFrame(StoryFrame frame)
         {
             DialogueManager.Instance.HideMainDialogue();
+            DialogueManager.Instance.HideCharacterDialogue();
             
             ChoiceManager.Instance.ShowOptionsPanel();
             ChoiceManager.Instance.RedrawOptionPanel(frame);

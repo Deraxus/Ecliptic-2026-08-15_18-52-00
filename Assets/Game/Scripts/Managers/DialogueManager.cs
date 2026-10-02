@@ -7,11 +7,16 @@ namespace Ecliptic.Dialogue
     public class DialogueManager : MonoBehaviour
     {
         public static DialogueManager Instance;
-
+        
+        
+        public Image mainCharacterImage;
         public Image mainDialogueImage;
+        
+        public TMP_Text mainCharacterText;
         public TMP_Text mainDialogueText;
     
         public string currentMainDialogueMessage;
+        public string currentCharacterTextMessage;
 
         public void Awake()
         {
@@ -34,7 +39,7 @@ namespace Ecliptic.Dialogue
                 return;
             }
         }
-        public void ChangeMiddleText(string newText)
+        public void ChangeMiddleMainText(string newText)
         {
             // Тут начинаем делать плавно появляющийся текст
             // Но это потом, мб через корутину
@@ -43,9 +48,25 @@ namespace Ecliptic.Dialogue
             mainDialogueText.text = newText;
         }
 
+        public void ChangeCharacterText(string newText)
+        {
+            currentCharacterTextMessage = newText;
+            mainCharacterText.text = newText;
+        }
+
+        public void ShowCharacterDialogue()
+        {
+            mainCharacterImage.enabled = true;
+        }
         public void ShowMainDialogue()
         {
             mainDialogueImage.enabled = true;
+        }
+
+        public void HideCharacterDialogue()
+        {
+            mainCharacterText.text = "";
+            mainCharacterImage.enabled = false;
         }
         
         public void HideMainDialogue()
