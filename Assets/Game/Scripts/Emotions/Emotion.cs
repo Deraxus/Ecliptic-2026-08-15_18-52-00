@@ -8,7 +8,8 @@ namespace Ecliptic.Characters
         Idle,
         Happy,
         Angry,
-        Sad
+        Sad,
+        Amazed,
     }
 
     [Serializable]
