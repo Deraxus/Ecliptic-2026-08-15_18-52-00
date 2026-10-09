@@ -3699,6 +3699,97 @@ MonoBehaviour:
     emotion: 0
     choices: []
     hideCharacters: 1
+  - id: 0
+    frameType: 0
+    dialogueText: "\u0418\u0434\u0435\u0430\u043B\u044C\u043D\u043E \u0447\u0438\u0441\u0442\u043E\u0435
+      \u0434\u0443\u043B\u043E \u043F\u0438\u0441\u0442\u043E\u043B\u0435\u0442\u0430
+      \u0441\u043C\u043E\u0442\u0440\u0435\u043B\u043E \u043F\u0440\u044F\u043C\u043E
+      \u043C\u0435\u0436\u0434\u0443 \u0435\u0435 \u0433\u043B\u0430\u0437. \u041E\u043D\u0430
+      \u0441\u0436\u0430\u043B\u0430 \u043F\u0440\u043E\u0441\u0442\u044B\u043D\u0438
+      \u0438 \u043D\u0435\u0431\u0440\u0435\u0436\u043D\u044B\u043C\u0438 \u0440\u044B\u0432\u043A\u0430\u043C\u0438
+      \u043E\u0442\u043F\u043E\u043B\u0437\u043B\u0430 \u043A \u0441\u0442\u0435\u043D\u0435,
+      \u043D\u043E \u043E\u0440\u0443\u0436\u0438\u0435 \u043F\u043E\u0441\u043B\u0443\u0448\u043D\u043E
+      \u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043B\u043E \u0437\u0430 \u0435\u0435
+      \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u0438\u0446\u0435\u0439. \u041C\u0443\u0436\u0447\u0438\u043D\u0430
+      \u0432 \u0434\u043B\u0438\u043D\u043D\u043E\u043C \u043A\u043E\u0436\u0430\u043D\u043E\u043C
+      \u043F\u043B\u0430\u0449\u0435 \u0431\u044B\u043B \u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u043D\u043E
+      \u0441\u043F\u043E\u043A\u043E\u0435\u043D, \u043E\u0442\u0447\u0435\u0433\u043E
+      \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u043B\u043E\u0441\u044C \u0435\u0449\u0435
+      \u0441\u0442\u0440\u0430\u0448\u043D\u0435\u0435. "
+    changeBackground: 1
+    frameBackground: {fileID: 11400000, guid: 76f673c308ccb5242abda84d34675a47, type: 2}
+    character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
+    characterSide: 1
+    clothesType: 0
+    emotion: 0
+    choices: []
+    hideCharacters: 1
+  - id: 0
+    frameType: 0
+    dialogueText: "\u041A\u0440\u0438\u043A\u043D\u0435\u0448\u044C \u2014 \u0437\u0430\u0441\u0442\u0440\u0435\u043B\u044E. "
+    changeBackground: 1
+    frameBackground: {fileID: 11400000, guid: 76f673c308ccb5242abda84d34675a47, type: 2}
+    character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
+    characterSide: 1
+    clothesType: 0
+    emotion: 0
+    choices: []
+    hideCharacters: 1
+  - id: 0
+    frameType: 0
+    dialogueText: "\u041A\u043E\u043B\u0435\u043D\u0438 \u043F\u0440\u043E\u0431\u0438\u043B\u0430
+      \u0447\u0430\u0441\u0442\u0430\u044F \u0438 \u043D\u0435\u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0438\u0440\u0443\u0435\u043C\u0430\u044F
+      \u0434\u0440\u043E\u0436\u044C. \u041C\u0443\u0436\u0447\u0438\u043D\u0430
+      \u043E\u0433\u043B\u044F\u0434\u0435\u043B \u0442\u0440\u044F\u0441\u0443\u0449\u0443\u044E\u0441\u044F
+      \u0432 \u0443\u0436\u0430\u0441\u0435 \u0434\u0435\u0432\u0443\u0448\u043A\u0443
+      \u0441 \u043D\u043E\u0433 \u0434\u043E \u0433\u043E\u043B\u043E\u0432\u044B
+      \u0438 \u0435\u043B\u0435 \u0432\u0438\u0434\u0438\u043C\u043E \u043D\u0430\u0445\u043C\u0443\u0440\u0438\u043B\u0441\u044F,
+      \u0437\u0430\u0442\u0435\u043C \u0434\u0435\u0440\u043D\u0443\u043B \u043F\u043B\u0435\u0447\u043E\u043C
+      \u0438 \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E\u0439 \u0440\u0443\u043A\u043E\u0439
+      \u043F\u043E\u0442\u044F\u043D\u0443\u043B\u0441\u044F \u043A \u043D\u0435\u0439."
+    changeBackground: 1
+    frameBackground: {fileID: 11400000, guid: 84c80b6cbb8f643429546a2b803dac98, type: 2}
+    character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
+    characterSide: 1
+    clothesType: 0
+    emotion: 0
+    choices: []
+    hideCharacters: 1
+  - id: 0
+    frameType: 0
+    dialogueText: "\u041E\u043D \u0441\u0445\u0432\u0430\u0442\u0438\u043B \u0435\u0435
+      \u0437\u0430 \u0432\u043E\u043B\u043E\u0441\u044B, \u0441\u0438\u043B\u043E\u0439
+      \u0441\u0442\u044F\u043D\u0443\u043B \u0441 \u043F\u043E\u0441\u0442\u0435\u043B\u0438
+      \u0438 \u0431\u0440\u043E\u0441\u0438\u043B \u043D\u0430 \u043F\u043E\u043B,
+      \u0437\u0430\u0442\u0435\u043C \u043B\u0435\u0433\u043A\u0438\u043C \u0443\u0434\u0430\u0440\u043E\u043C
+      \u0442\u0443\u043F\u043E\u0433\u043E \u043D\u043E\u0441\u043A\u0430 \u0435\u0433\u043E
+      \u0431\u043E\u0442\u0438\u043D\u043A\u0430 \u0437\u0430\u0434\u0435\u043B \u043E\u0431\u043B\u0430\u0441\u0442\u044C
+      \u0432\u043E\u043A\u0440\u0443\u0433 \u043F\u0435\u0447\u0435\u043D\u0438. "
+    changeBackground: 0
+    frameBackground: {fileID: 11400000, guid: 84c80b6cbb8f643429546a2b803dac98, type: 2}
+    character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
+    characterSide: 1
+    clothesType: 0
+    emotion: 0
+    choices: []
+    hideCharacters: 1
+  - id: 0
+    frameType: 0
+    dialogueText: "\u0421\u0438\u043B\u044C\u0432\u0438 \u0441\u043A\u0443\u043A\u043E\u0436\u0438\u043B\u0430\u0441\u044C,
+      \u043D\u043E \u0434\u0430\u0436\u0435 \u043D\u0435 \u043F\u0438\u0441\u043A\u043D\u0443\u043B\u0430.
+      \u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0443\u0434\u0430\u0440
+      \u043F\u0440\u0438\u0448\u0435\u043B\u0441\u044F \u043F\u043E \u0437\u0430\u0442\u044B\u043B\u043A\u0443
+      \u0438, \u043D\u0430\u043A\u043E\u043D\u0435\u0446, \u043A \u0434\u0435\u0432\u0443\u0448\u043A\u0435
+      \u043F\u0440\u0438\u0448\u0435\u043B \u0434\u043E\u043B\u0433\u043E\u0436\u0434\u0430\u043D\u043D\u044B\u0439
+      \u043A\u0440\u0435\u043F\u043A\u0438\u0439 \u0441\u043E\u043D. "
+    changeBackground: 0
+    frameBackground: {fileID: 11400000, guid: 84c80b6cbb8f643429546a2b803dac98, type: 2}
+    character: {fileID: 11400000, guid: 842fb4ab86611fe46b413178e6beed32, type: 2}
+    characterSide: 1
+    clothesType: 0
+    emotion: 0
+    choices: []
+    hideCharacters: 1
   autoStoryFramesID: 1
   currentFrameIndex: 0
   currentStoryFrame:
@@ -4127,7 +4218,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479220269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4136,8 +4227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243.50003, y: -268.76715}
-  m_SizeDelta: {x: 487, y: 1330.5911}
+  m_AnchoredPosition: {x: 294, y: -237.83}
+  m_SizeDelta: {x: 805.152, y: 1912.128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
 GameObject:
@@ -4834,17 +4925,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216331051}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1889457976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243.58, y: -268.7672}
-  m_SizeDelta: {x: 487, y: 1330.591}
+  m_AnchoredPosition: {x: -307.32126, y: -237.82605}
+  m_SizeDelta: {x: 805.152, y: 1912.128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1216331053
 CanvasRenderer:
@@ -4919,8 +5010,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000010282, y: -513.97}
-  m_SizeDelta: {x: 974.08, y: 820.0682}
+  m_AnchoredPosition: {x: -0.039497, y: -512}
+  m_SizeDelta: {x: 811.0588, y: 682.8222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258761116
 MonoBehaviour:
@@ -4935,14 +5026,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7520884050360105758, guid: 8cc094e8be4285441b2f5c43c9cc51bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4992,10 +5083,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1258761115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00055695, y: 0.0009613}
-  m_SizeDelta: {x: 974.08, y: 820.07}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -56.7216, y: -47.7534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333945628
 MonoBehaviour:
@@ -5028,8 +5119,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5287,14 +5378,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7520884050360105758, guid: 8cc094e8be4285441b2f5c43c9cc51bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5956,8 +6047,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00055695, y: 0.0009613}
-  m_SizeDelta: {x: 974.08, y: 820.07}
+  m_AnchoredPosition: {x: 0.0000038147, y: 0.000024796}
+  m_SizeDelta: {x: 932.4122, y: 784.9901}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022759071
 MonoBehaviour:
@@ -5988,8 +6079,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
