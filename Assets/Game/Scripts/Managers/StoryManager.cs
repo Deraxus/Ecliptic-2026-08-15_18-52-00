@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Ecliptic.Stats;
+using Ecliptic.UI;
 
 namespace Ecliptic.Story
 {
@@ -57,6 +58,17 @@ namespace Ecliptic.Story
             NextFrame();
         }
 
+        // НЕ ГОТОВА. В разработке
+        void LoadFullFramesID(StoryFrame storyFrame, int lastFrameID)
+        {
+            int currentFrameID = lastFrameID;
+            foreach (StoryFrame frame in startStoryFrames)
+            {
+                frame.id = currentFrameID;
+                currentFrameID++;
+            }
+        }
+
         // Подключаем метод к кликам/тапам, и даем ему бегать по списку фреймов
         public void NextFrame()
         {
@@ -73,6 +85,8 @@ namespace Ecliptic.Story
             
             currentStoryFrame = currentLocalStoryFrame;
             currentFrameIndex++;
+            
+            UIManager.Instance.ChangeFrameIDText(currentFrameIndex);
         }
         
         // Кнопка вызывает этот метод при нажатии
@@ -162,6 +176,9 @@ namespace Ecliptic.Story
 
         private void DisplayOptionsFrame(StoryFrame frame)
         {
+            CharacterManager.Instance.ShowCharacters(frame.characterSide);
+            CharacterManager.Instance.DisplayCharacter(frame.character, frame.characterSide, frame.clothesType, frame.emotion);
+            
             DialogueManager.Instance.HideMainDialogue();
             DialogueManager.Instance.HideCharacterDialogue();
             
